@@ -1,0 +1,113 @@
+.container-center{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient( #181c2e3f,#181c2e);
+    padding: 0 12px;
+  }
+  
+  .login{
+    background-color: #EAEAEC;
+    width: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .login-area{
+    background-color: #181c2e;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 120px;
+  }
+  
+  .login-area img{
+    margin: auto;
+    width: 120px;
+    height: 120px;
+    padding: 10px;
+  }
+  
+  form{
+    margin-top: 2rem;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  form h1{
+    text-align: center;
+    margin: 0rem 0rem 1.5rem 0rem;
+    color: #181c2e;
+  }
+  
+  .login input{
+    margin: auto;
+    margin-bottom: 1.5rem;
+    height: 35px;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 15px;
+    background-color: 'white';
+    border: 0;
+    width: 50%;
+    
+  }
+  
+  .botaoLogin{
+    margin: auto;
+    height: 40px;
+    border:0;
+    border-radius: 20px;
+    background-color: #181c2e;
+    color: #FFF;
+    font-size: 1.2rem;
+    transition: 0.7s;
+    width: 50%;
+  }
+
+  .botaoLogin:hover{
+    background-color: #181c2ed4;
+  }
+  
+  .login a{
+    margin: 1rem 0 1.5rem 0;
+    color: #181c2e;
+    cursor: pointer;
+    transition: 0.7s;
+    font-size: 14px;
+  }
+
+  .login a:hover{
+    color: #181c2ed4
+  }
+
+  @media screen and (max-width: 700px){
+    .login input{
+      margin: auto;
+      margin-bottom: 1.5rem;
+      height: 35px;
+      border-radius: 20px;
+      padding: 10px;
+      font-size: 15px;
+      background-color: 'white';
+      border: 0;
+      width: 90%;
+      
+    }
+    
+    .botaoLogin{
+      margin: auto;
+      height: 40px;
+      border:0;
+      border-radius: 20px;
+      background-color: #181c2e;
+      color: #FFF;
+      font-size: 1.2rem;
+      transition: 0.7s;
+      width: 50%;
+    }
+  }
