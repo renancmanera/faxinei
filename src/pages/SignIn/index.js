@@ -1,29 +1,32 @@
-import { useState } from 'react';
-import './signin.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { useState, useContext } from 'react'
+import './signin.css'
 
-export default function SignIn() {
+import logo from '../../assets/logo.png'
+import { Link } from 'react-router-dom'
+import { AuthContext } from '../../contexts/auth'
+import {toast} from 'react-toastify'
+
+export default function SignIn(){
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const navigate = useNavigate();  // Para redirecionamento
+  const [password, setSenha] = useState('');
+  const { signIn } = useContext(AuthContext);
+  const { loadingAuth } = useContext(AuthContext);
 
-  function logar(e) {
+  function logar(e){
     e.preventDefault();
     
-    if (email !== '' && password !== '') {
-      // Aqui você pode adicionar a lógica de login com autenticação se necessário
-
-      // Exemplo de redirecionamento após login bem-sucedido
-      navigate('');  // Redireciona para a página de dashboard
-    } else {
-      alert('Preencha todos os campos!');
+    if(email !== '' && password !== ''){
+      signIn(email, password);
+    }else{
+      toast.info('Preencha todos os campos.');
     }
   }
 
-  return (
+  return(
     <div className="container-center">
       <div className="login">
         <div className="login-area">
+          <img src={logo} alt="Logo do sistema de chamados" />
         </div>
 
         <form onSubmit={logar}>
@@ -32,23 +35,24 @@ export default function SignIn() {
             type="text" 
             placeholder="usuario@email.com"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={ (e) => setEmail(e.target.value) }
           />
 
           <input 
             type="password" 
             placeholder="********"
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={ (e) => setSenha(e.target.value) }
           />
 
-          <button type="submit" className="botaoLogin">
+        <button type="submit" className='botaoLogin'>
             Entrar
           </button>
         </form>
 
-        <Link to="/cadastrar">Não possui uma conta? Cadastre-se</Link>
+        <Link to="/cadastrar">Não possui uma conta? <span className='cadastre-se'>Cadastre-se</span></Link>
+
       </div>
     </div>
-  );
+  )
 }

@@ -1,0 +1,125 @@
+.sidebar {
+    width: 180px;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Mantém a estrutura flexível */
+}
+  
+  .sidebar div{
+    background-color: #000000;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 150px;
+  }
+  
+  .sidebar div{
+    padding-top: 30px;
+  }
+  
+  .sidebar div img {
+    width: 90px;
+    height: 90px;
+    display: block;
+    margin: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    filter: drop-shadow(2px 3px 6px #121212);
+    -webkit-filter: drop-shadow(2px 3px 6px #121212);
+  }
+  
+  .sidebar a {
+    display: block;
+    padding: 16px;
+    display: flex;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7);
+    flex-direction: row;
+    align-items: center;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave */
+}
+  
+
+  
+  .sidebar a:hover{
+    background-color: #5EA1BD;
+    color: #FFF;
+  }
+  
+  .content{
+    margin-left: 200px;
+    padding: 1px 16px;
+  }
+
+  .sidebar a.active,
+.sidebar a:hover {
+    background-color: #5EA1BD;
+    color: #FFF;
+}
+
+.sidebar a svg {
+    margin-right: 0.5rem;
+}
+
+.sidebar a:last-child {
+  margin-top: auto; /* Garante que o botão de sair seja empurrado para o final */
+}
+
+  
+  @media screen and (max-width: 781px){
+    .sidebar{
+        margin: auto;  
+        width: 100%;
+        height: auto;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+    }
+  
+    div.content{
+      margin-left: 0;
+    }
+  
+    .sidebar a{
+      float: left;
+    }
+  
+    .sidebar div{
+      display: none;
+    }
+
+    
+  }
+  
+  
+@media screen and (max-width: 475px){
+    .sidebar a{
+        margin: auto;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        float: none;
+    }
+
+    .sidebar a span {
+        display: none;
+    }
+
+    .sidebar a.active,
+    .sidebar a:hover {
+      background-color: transparent;
+        color: #FFF;
+    }
+    
+    .sidebar a svg {
+        margin-right: 0.5rem;
+    }
+}
