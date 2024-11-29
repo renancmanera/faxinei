@@ -1,0 +1,71 @@
+.agendamento-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background-color: white;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: black;
+    font-weight: bold;
+}
+
+.agendamento-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.agendamento-card {
+    background-color: white;
+    border: 1px solid #5EA1BD;
+    border-radius: 10px;
+    padding: 15px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.agendamento-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.agendamento-card h2 {
+    font-size: 1.5rem;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.agendamento-card p {
+    font-size: 1rem;
+    margin: 5px 0;
+    color: #5EA1BD;
+}
+
+.loading, .empty {
+    font-size: 1.5rem;
+    color: black;
+    text-align: center;
+    margin-top: 50px;
+    font-weight: bold;
+}
+.btn-excluir {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin-top: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-excluir:hover {
+    background-color: #c9302c;
+}
