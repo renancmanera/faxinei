@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/faxinei/static/css/main.5a12716d.css",
-    "main.js": "/faxinei/static/js/main.0376d684.js",
+    "main.css": "/faxinei/static/css/main.57b33d32.css",
+    "main.js": "/faxinei/static/js/main.55e9d3f6.js",
     "static/js/453.ccdc73e4.chunk.js": "/faxinei/static/js/453.ccdc73e4.chunk.js",
     "static/media/logo.png": "/faxinei/static/media/logo.0d6573c82c0a15168b40.png",
     "index.html": "/faxinei/index.html",
-    "main.5a12716d.css.map": "/faxinei/static/css/main.5a12716d.css.map",
-    "main.0376d684.js.map": "/faxinei/static/js/main.0376d684.js.map",
+    "main.57b33d32.css.map": "/faxinei/static/css/main.57b33d32.css.map",
+    "main.55e9d3f6.js.map": "/faxinei/static/js/main.55e9d3f6.js.map",
     "453.ccdc73e4.chunk.js.map": "/faxinei/static/js/453.ccdc73e4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5a12716d.css",
-    "static/js/main.0376d684.js"
+    "static/css/main.57b33d32.css",
+    "static/js/main.55e9d3f6.js"
   ]
 }
