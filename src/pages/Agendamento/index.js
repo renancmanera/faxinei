@@ -4,6 +4,8 @@ import { db } from "../../services/FirebaseConnection";
 import Header from "../../components/Header";
 import { AuthContext } from "../../contexts/auth";
 import { toast } from "react-toastify";
+import Title from "../../components/Title";
+import { FiUser } from "react-icons/fi";
 
 import "./agendamento.css";
 
@@ -82,19 +84,22 @@ export default function Agendamento() {
     return (
         <div>
             <Header />
-            <div className="agendamento-container">
-                <h1>Meus Agendamentos</h1>
+                <div className="content">
+                    <Title nome="Meus agendamentos">
+                        <FiUser size={25} />
+                    </Title>
+            <div className="container">
                 {loading ? (
                     <div className="loading">Carregando...</div>
                 ) : agendamentos.length === 0 ? (
-                    <div className="empty">Você ainda não possui agendamentos.</div>
+                    <div className="empty">Você não possui agendamentos</div>
                 ) : (
                     <div className="agendamento-list">
                         {agendamentos.map((agendamento, index) => (
                             <div className="agendamento-card" key={index}>
                                 <h2>
                                     {user.objetivo === "1"
-                                        ? `Faxineira: ${agendamento.faxineiraNome}`
+                                        ? `Faxineiro(a): ${agendamento.faxineiraNome}`
                                         : `Cliente: ${agendamento.contratanteNome}`}
                                 </h2>
                                 <p><strong>Data:</strong> {agendamento.data}</p>
@@ -109,7 +114,7 @@ export default function Agendamento() {
                         ))}
                     </div>
                 )}
-            </div>
+            </div> </div>
         </div>
     );
 }

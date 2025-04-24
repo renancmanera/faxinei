@@ -1,4 +1,4 @@
-.home-container {
+.container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
@@ -68,7 +68,8 @@ h1 {
     border: none;
     border-radius: 10px;
     padding: 12px 20px;
-    margin: 15px 0;
+    margin: auto;
+    margin-bottom: 15px;
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;

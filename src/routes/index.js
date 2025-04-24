@@ -12,6 +12,7 @@ function RoutesApp() {
   
     <Routes>
       <Route path="/" element={<SignIn />} />
+      <Route path="/faxinei" element={<SignIn />} />
       <Route path="/cadastrar" element={<SignUp />} />
       <Route path="/home" element={<Private><Home /></Private>} />
       <Route path="/perfil" element={<Profile />} />

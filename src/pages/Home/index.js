@@ -2,6 +2,8 @@ import { useEffect, useState, useContext } from "react";
 import { collection, getDocs, doc, updateDoc, getDoc } from "firebase/firestore";
 import { db } from "../../services/FirebaseConnection";
 import Header from "../../components/Header";
+import Title from "../../components/Title";
+import { FiHome } from "react-icons/fi";
 import { AuthContext } from "../../contexts/auth";
 import { toast } from "react-toastify";
 
@@ -120,39 +122,43 @@ export default function Home() {
     return (
         <div>
             <Header />
-            <div className="home-container">
-                <h1>Faxineiras Disponíveis</h1>
-                {loading ? (
-                    <div className="loading">Carregando...</div>
-                ) : faxineiras.length === 0 ? (
-                    <div className="empty">Nenhuma faxineira disponível no momento.</div>
-                ) : (
-                    <div className="cards-container">
-                        {faxineiras.map((faxineira) => (
-                            <div className="card" key={faxineira.id}>
-                                <img
-                                    src={faxineira.avatarUrl || "/default-avatar.png"}
-                                    alt={faxineira.nome}
-                                    className="avatar"
-                                />
-                                <div className="info">
-                                    <h2>{faxineira.nome}</h2>
-                                    <p><strong>Serviços:</strong> {faxineira.servicos}</p>
-                                    <p><strong>Contato:</strong> {faxineira.telefone}</p>
+            <div className="content">
+                <Title nome="Meu perfil">
+                    <FiHome size={25} />
+                </Title>
+
+                <div className="container">
+                    {loading ? (
+                        <div className="loading">Carregando...</div>
+                    ) : faxineiras.length === 0 ? (
+                        <div className="empty">Nenhuma faxineira disponível no momento.</div>
+                    ) : (
+                        <div className="cards-container">
+                            {faxineiras.map((faxineira) => (
+                                <div className="card" key={faxineira.id}>
+                                    <img
+                                        src={faxineira.avatarUrl || "/default-avatar.png"}
+                                        alt={faxineira.nome}
+                                        className="avatar"
+                                    />
+                                    <div className="info">
+                                        <h2>{faxineira.nome}</h2>
+                                        <p><strong>Serviços:</strong> {faxineira.servicos}</p>
+                                        <p><strong>Contato:</strong> {faxineira.telefone}</p>
+                                    </div>
+                                    {user.objetivo === "1" && (
+                                        <button
+                                            className="btn-agendar"
+                                            onClick={() => openModal(faxineira)}
+                                         >
+                                            Agendar Faxina
+                                        </button>
+                                    )}
                                 </div>
-                                {user.objetivo === "1" && (
-                                    <button
-                                        className="btn-agendar"
-                                        onClick={() => openModal(faxineira)}
-                                    >
-                                        Agendar Faxina
-                                    </button>
-                                )}
-                            </div>
-                        ))}
-                    </div>
-                )}
-            </div>
+                            ))}
+                        </div>
+                    )}
+            </div></div>
 
             {showModal && (
                 <div className="modal-overlay">

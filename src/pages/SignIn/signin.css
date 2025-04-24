@@ -24,6 +24,14 @@
     justify-content: center;
     height: 120px;
   }
+
+  .login-area img {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+  }  
   
   form{
     margin-top: 0.4rem;

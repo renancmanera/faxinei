@@ -1,4 +1,4 @@
-.agendamento-container {
+.container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
@@ -51,8 +51,8 @@ h1 {
     font-size: 1.5rem;
     color: black;
     text-align: center;
-    margin-top: 50px;
-    font-weight: bold;
+    margin-top: 0px;
+    font-size: larger;
 }
 .btn-excluir {
     background-color: #d9534f;
